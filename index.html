@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codebusters</title>
     <h1>Codebusters Practice</h1>
-    <script language="javascript" src="app.js" type="text/javascript"></script>
+    <script language="java" src="Main.java" type="text/java"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <div class='content'>
+    <p id="question"></p>
+    <label for="answer">Enter answer:</label>
+    <input type="text" id="quantity" name="answer" value="0" onkeypress="keyPress(event)">
+    <input type="button" class="button" onclick="getInput()" value="Check Answer" id="submitButton">
+    
+    <p id="score">Score: 0</p>
+    <p id="scoreDescription"></p>
+    <p id="answeredFraction"></p>
+
+    <p id="highscore"></p>
+    </div>
+</body>
+</html>
