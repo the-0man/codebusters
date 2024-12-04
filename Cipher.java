@@ -9,6 +9,7 @@ public class Cipher {
         scramblebet = new char[alphabet.length];
     }
 
+    @SuppressWarnings("deprecation")
     public String scramble() {
         int[] random = new int[26];
         int i = 0;
@@ -27,8 +28,12 @@ public class Cipher {
         }
         for (int j = 0; j < plaintext.length; j++)
         {
+            Character current = new Character(plaintext[j]);
+            if (!current.equals(' '))
+            {
             int index = Cipher.sequentialSearch(alphabet, plaintext[j]);
             plaintext[j] = scramblebet[index];
+            }
         }
         String scrambledString = new String(plaintext);
         return scrambledString;

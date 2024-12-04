@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
-        String str = "helloworld";
+        String str = "hello world";
         Cipher test = new Cipher(str);
         System.out.println("Scrambled word: " + test.scramble());
         Scanner scan = new Scanner(System.in);
