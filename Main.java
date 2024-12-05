@@ -31,7 +31,6 @@ public class Main {
         quote = quote.toLowerCase();
         Cipher test = new Cipher(quote);
         System.out.println("Author: " + author);
-        System.out.println(quote);
         System.out.println("Scrambled quote: " + test.scramble());
         Scanner scan = new Scanner(System.in);
         String guess = "";
