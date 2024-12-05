@@ -29,7 +29,7 @@ public class Cipher {
         for (int j = 0; j < plaintext.length; j++)
         {
             Character current = new Character(plaintext[j]);
-            if (!current.equals(' '))
+            if (Cipher.sequentialSearch(alphabet, current) != -1)
             {
             int index = Cipher.sequentialSearch(alphabet, plaintext[j]);
             plaintext[j] = scramblebet[index];
