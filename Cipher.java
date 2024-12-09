@@ -1,8 +1,8 @@
 public class Cipher {
 
-    private char[] plaintext;
-    private char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-    private char[] scramblebet;
+    public char[] plaintext;
+    public char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    public char[] scramblebet;
 
     public Cipher (String plaintext) {
         this.plaintext = plaintext.toCharArray();
@@ -69,5 +69,13 @@ public class Cipher {
     public String getPlaintext(){
         String str = new String(this.plaintext);
         return str;
+    }
+
+    public char[] getScramblebet(){
+        return scramblebet;
+    }
+
+    public char[] getAlphabet(){
+        return alphabet;
     }
 }
