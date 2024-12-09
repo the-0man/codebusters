@@ -66,6 +66,11 @@ public class Main {
                 control = false;
                 System.out.println("Quote: " + new String(quoteArr));
             }
+            if(guess.equals("give up"))
+            {
+                control = false;
+                System.out.println("Quote: " + quote);
+            }
         }
         System.out.println("You got it!");
     }
