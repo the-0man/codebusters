@@ -39,7 +39,8 @@ public class Main {
         char[] quoteArr = scrambledQuote.toCharArray();
         char[] scramblebet = test.getScramblebet();
         char[] alphabet = test.getAlphabet();
-        while (!guess.equals(quote))
+        boolean control = true;
+        while (!guess.equals(quote) && control)
         {
             System.out.println("Scrambled quote: " + new String(quoteArr));
             System.out.print("Guess: ");
@@ -59,6 +60,11 @@ public class Main {
                         }
                     }
                 }
+            }
+            if(quote.toUpperCase().equals(new String(quoteArr)))
+            {
+                control = false;
+                System.out.println("Quote: " + new String(quoteArr));
             }
         }
         System.out.println("You got it!");
