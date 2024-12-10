@@ -45,32 +45,34 @@ public class Main {
             System.out.println("Scrambled quote: " + new String(quoteArr));
             System.out.print("Guess: ");
             guess = scan.nextLine();
-            if (guess.indexOf("=") == 1)
-            {
-                char[] guessArr = guess.toCharArray();
-                first = guessArr[0];
-                second = guessArr[2];
-                if(Cipher.sequentialSearch(scramblebet, first) == Cipher.sequentialSearch(alphabet, second))
+            try {
+                if (guess.indexOf("=") == 1)
                 {
-                    for (int i = 0; i < quoteArr.length; i++)
+                    char[] guessArr = guess.toCharArray();
+                    first = guessArr[0];
+                    second = guessArr[2];
+                    if(Cipher.sequentialSearch(scramblebet, first) == Cipher.sequentialSearch(alphabet, second))
                     {
-                        if(quoteArr[i] == first)
+                        for (int i = 0; i < quoteArr.length; i++)
                         {
-                            quoteArr[i] = Character.toUpperCase(second);
+                            if(quoteArr[i] == first)
+                            {
+                                quoteArr[i] = Character.toUpperCase(second);
+                            }
                         }
                     }
                 }
-            }
-            if(quote.toUpperCase().equals(new String(quoteArr)))
-            {
-                control = false;
-                System.out.println("Quote: " + new String(quoteArr));
-            }
-            if(guess.equals("give up"))
-            {
-                control = false;
-                System.out.println("Quote: " + quote);
-            }
+                if(quote.toUpperCase().equals(new String(quoteArr)))
+                {
+                    control = false;
+                    System.out.println("Quote: " + new String(quoteArr));
+                }
+                if(guess.equals("give up"))
+                {
+                    control = false;
+                    System.out.println("Quote: " + quote);
+                }
+            } catch (Exception e) {}
         }
         System.out.println("You got it!");
     }
